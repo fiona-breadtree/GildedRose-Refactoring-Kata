@@ -6,6 +6,7 @@ class GildedRose
 
   def update_quality()
     @items.each do |item|
+      next if item.sell_in <= 0
       item.sell_in = item.sell_in - 1
       if item.quality != 0
         item.quality = item.quality - 1
